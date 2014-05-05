@@ -222,7 +222,7 @@ int module_init(char **status_info)
 		return -1;
 	}
 
-	*status_info = g_strdup("Cicero initialized successfully.");
+	*status_info = g_strdup("Cicero initialized succesfully.");
 
 	return 0;
 }

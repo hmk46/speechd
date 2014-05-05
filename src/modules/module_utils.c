@@ -208,6 +208,7 @@ do_set(void)
             
             SET_PARAM_NUM(rate, ((number>=-100) && (number<=100)))
             else SET_PARAM_NUM(pitch, ((number>=-100) && (number<=100)))
+	    else SET_PARAM_NUM(pitch_range, ((number>=-100) && (number<=100)))
 	    else SET_PARAM_NUM(volume, ((number>=-100) && (number<=100)))
             else SET_PARAM_STR_C(punctuation_mode, str2EPunctMode)
             else SET_PARAM_STR_C(spelling_mode, str2ESpellMode)
@@ -825,7 +826,7 @@ module_terminate_thread(pthread_t thread)
 
     ret = pthread_cancel(thread);
     if (ret != 0){
-        DBG("Cancellation of speak thread failed");
+        DBG("Cancelation of speak thread failed");
         return 1;
     }
     ret = pthread_join(thread, NULL);
