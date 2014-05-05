@@ -54,6 +54,11 @@ void options_print_help(char *argv[])
 	printf("\t\t\t\t");
 	printf(_("(between %+d and %+d, default: %d)\n"), -100, 100, 0);
 
+	printf("-R, --pitch-range\t\t\t");
+	printf(_("Set the pitch range of the speech\n"));
+	printf("\t\t\t\t");
+	printf(_("(between %+d and %+d, default: %d)\n"), -100, 100, 0);
+	
 	printf("-i, --volume\t\t\t");
 	printf(_("Set the volume (intensity) of the speech\n"));
 	printf("\t\t\t\t");
@@ -72,7 +77,7 @@ void options_print_help(char *argv[])
 	printf(_("Set the language (ISO code)\n"));
 
 	printf("-t, --voice-type\t\t");
-	printf(_("Set the preferred voice type\n"));
+	printf(_("Set the prefered voice type\n"));
 	printf("\t\t\t\t(male1, male2, male3, female1, female2\n"
 	       "\t\t\t\tfemale3, child_male, child_female)\n");
 
@@ -193,6 +198,9 @@ int options_parse(int argc, char *argv[])
 			break;
 		case 'p':
 			OPT_SET_INT(pitch);
+			break;
+		case 'R':
+			OPT_SET_INT(pitch_range);
 			break;
 		case 'i':
 			OPT_SET_INT(volume);
